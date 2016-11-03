@@ -1,1 +1,1 @@
-web: python wordserver/server.py
+web: python server.py
