@@ -17,7 +17,8 @@ $(document).ready(function() {
     }, 300);
 
     function changeWord() {
-        $.get('http://burgundy.io:8080/', function(data) {
+        // previoius url http://burgundy.io:8080/
+        $.get('/word', function(data) {
             loaded[0] = 0;
             $('#suggestion')[0].textContent = data;
             clearInterval(intervalVar);
