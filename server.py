@@ -1,5 +1,5 @@
 from bottle import route, hook, response, run, static_file
-import random
+import random, optparse
 
 words = tuple(set(map(lambda x:x.lower().strip(), open('words.txt').read().splitlines())))
 
@@ -19,4 +19,7 @@ def index():
 def static_files(filename):
 	return static_file(filename, 'static')
 
-run(host = '0.0.0.0', port = 8080, server = 'tornado')
+parser = optparse.OptionParser()
+(options, args) = parser.parse_args()
+
+run(host = '0.0.0.0', port = args[0], server = 'tornado')
