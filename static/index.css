@@ -40,3 +40,22 @@ body {
   font-size: 750%;
   color: white;
 }
+
+.credit {
+  color: #182351;
+  display: table-row;
+  height: 3rem;
+  font-family: 'Avenir', serif;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+.credit a, .credit a:visited {
+  color: #182351;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.credit a:hover {
+  opacity: 0.7;
+}
