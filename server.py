@@ -9,7 +9,7 @@ def enable_cors():
 
 @route('/')
 def root():
-	return static_file('index.html', '../static')
+	return static_file('index.html', 'static')
 
 @route('/word')
 def index():
@@ -17,6 +17,6 @@ def index():
 
 @route('/static/<filename>')
 def static_files(filename):
-	return static_file(filename, '../static')
+	return static_file(filename, 'static')
 
 run(host = '0.0.0.0', port = 8080, server = 'tornado')
