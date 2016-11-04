@@ -14,25 +14,33 @@ $(document).ready(function() {
         }
     }
 
+    // get a new word
     function changeWord() {
         $.get('/word', function(data) {
-            wordsUsed = true;
-            $('#help-words').addClass('hide');
-            $('#word').removeClass('hide');
-            $('#word')[0].textContent = data;
+            // catch the times when user tries to switch views and an old request returns 
+            if(currentView == WORDS_VIEW) {
+                wordsUsed = true;
+                $('#help-words').addClass('hide');
+                $('#word').removeClass('hide');
+                $('#word')[0].textContent = data;
+            }
         });
     }
 
+    // get a new prompt
     function changePrompt() {
         $.get('/prompt', function(data) {
-            promptsUsed = true;
-            $('#help-prompts').addClass('hide');
-            $('#prompt').removeClass('hide');
-            $('.prompt-title').removeClass('hide');
-            $('#prompt')[0].textContent = data;
+            if(currentView == PROMPTS_VIEW) {
+                promptsUsed = true;
+                $('#help-prompts').addClass('hide');
+                $('#prompt').removeClass('hide');
+                $('.prompt-title').removeClass('hide');
+                $('#prompt')[0].textContent = data;
+            }
         });
     }
 
+    // switch view to words
     function switchToWords() {
         if(currentView != WORDS_VIEW) {
             currentView = WORDS_VIEW;
@@ -48,11 +56,10 @@ $(document).ready(function() {
             } else {
                 $('#help-words').removeClass('hide');
             }
-            // hide prompts
-            // show words
         }
     }
 
+    // switch view to prompts
     function switchToPrompts() {
         if(currentView != PROMPTS_VIEW) {
             currentView = PROMPTS_VIEW;
@@ -68,8 +75,6 @@ $(document).ready(function() {
             } else {
                 $('#help-prompts').removeClass('hide');
             }
-            // hide prompts
-            // show words
         }
     }
 
@@ -80,10 +85,11 @@ $(document).ready(function() {
         $('#prompt').css('font-size', windowWidth/9 + "px")
     }
 
+    // hah this is pretty outdated, works though 
     adjustFont();
-
     $(window).resize(adjustFont);
-    $(document).keypress(changeWord);
+
+    $(document).keypress(registerTap);
     $$('#suggestion').tap(registerTap);
 
     $$('#words').tap(switchToWords);
