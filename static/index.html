@@ -20,8 +20,22 @@
  </head>
 
  <body>
-  <div id="suggestion">hmm</div>
-  <div class="credit">forked from <a href="http://burgundy.io">burgundy.io</a></div>
+  <div class="top-bar">
+    <ul class="nav">
+      <li class="active" id="words">1</li>
+      <li class="or">or</li>
+      <li id="prompts">n</li>
+    </ul>
+    <div class="credit credit-top">forked from <a href="http://burgundy.io">burgundy.io</a></div>
+  </div>
+  <div id="suggestion">
+    <div class="help" id="help-words">click or tap to start generating words</div>
+    <div class="help hide" id="help-prompts">click or tap to start generating prompts</div>
+    <div class="hide" id="word"></div>
+    <div class="hide prompt-title">PROMPT</div>
+    <div class="hide" id="prompt"></div>
+  </div>
+  <div class="credit credit-mobile">forked from <a href="http://burgundy.io">burgundy.io</a></div>
  </body>
  <!-- Source code and full word list can be found at github.com/hashme/burgundy -->
 </html>

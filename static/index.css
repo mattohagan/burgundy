@@ -1,7 +1,9 @@
 html {
   background-color: #1E3888;
   height: 100%;
+  font-size: 16px;
 }
+
 
 body {
   -webkit-touch-callout: none;
@@ -24,6 +26,10 @@ body {
   height: 100%;
 }
 
+.hide {
+  display: none;
+}
+
 #suggestion {
   cursor: default;
   -webkit-touch-callout: none;
@@ -36,18 +42,105 @@ body {
   display: table-cell;
   vertical-align: middle;
   width: 100%;
-  font-family: 'Bitter', serif;
-  font-size: 750%;
   color: white;
 }
 
-.credit {
-  color: #182351;
+#word {
+  font-family: 'Bitter', serif;
+}
+
+#prompt {
+  font-family: 'Bitter', serif;
+  text-align: left;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.prompt-title {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 800;
+  font-size: 1.6rem;
+  text-align: left;
+  color: #1c2450;
+  margin-left: 30%;
+}
+
+.help {
+  font-family: 'Avenir', sans-serif;
+  font-size: 35px;
+  color: #445f9f;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.top-bar {
   display: table-row;
+  height: 4rem;
+  width: 100%;
+}
+
+.nav {
+  text-align: left;
+  display: table-cell;
+  color: #445f9f;
+  font-family: 'Bitter', serif;
+  font-size: 2.4rem;
+  padding-left: 50px;
+}
+
+.nav li {
+  float: left;
+  list-style: none;
+  margin-top: 2.3rem;
+  margin-left: 1.5rem;
+}
+
+.nav li:nth-child(1) {
+  margin-left: 0;
+}
+
+.nav li:nth-child(2) {
+  margin-left: 1.8rem;
+}
+
+.nav li:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav .or {
+  font-family: 'Avenir', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #182351;
+  padding-top: 0.5rem;
+}
+
+.nav .or:hover {
+  color: #182351;
+  cursor: default;
+}
+
+.nav .active {
+  color: #fff;
+}
+
+.credit-mobile {
+  color: #182351;
+  display: none;
   height: 3rem;
-  font-family: 'Avenir', serif;
+  font-family: 'Avenir', sans-serif;
   font-size: 1.2rem;
   width: 100%;
+}
+
+.credit-top {
+  color: #182351;
+  position: absolute;
+  right: 50px;
+  top: 3.2rem;
+  font-family: 'Avenir', sans-serif;
+  font-size: 1.2rem;
 }
 
 .credit a, .credit a:visited {
@@ -59,3 +152,20 @@ body {
 .credit a:hover {
   opacity: 0.7;
 }
+
+
+@media only screen and (max-device-width: 850px) {
+  html {
+    font-size: 30px;
+  }
+
+  .credit-top {
+    display: none;
+  }
+
+  .credit-mobile {
+    display: table-row;
+  }
+}
+
+
